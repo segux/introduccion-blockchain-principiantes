@@ -27,6 +27,7 @@
 
 
 ### TODO: Mint nft
+# https://github.com/onedebos/the-osun-river-nft/blob/main/scripts/mint-nft.js
 
 # Original repo https://github.com/onedebos/the-osun-river-nft 
 
