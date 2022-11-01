@@ -25,6 +25,18 @@ El asset que queramos convertir en NFT, en este caso una imagen, aunque podría 
 ![image info](./assets/nft-diagram.png)
 
 
-## Table of content
+## Metadata
 
-- 
+ERC-721 contiene un string metadata que es principalmente la base de los NFT.
+En este tutorial realizaremos un NFT donde la metadata se  almacenará off-chain pero utilizando el protocolo y sistema de ficheros IPFS.
+No entraremos en detalle en este tutorial al respecto, pero recomiendo una lectura de este articulo de OpenSea sobre metadata y descentralización https://opensea.io/blog/announcements/decentralizing-nft-metadata-on-opensea/ 
+
+![image_info](./assets/metadata-info.png)
+
+
+## Upload metadata to Pinata
+Procederemos a subir una imagen a Pinata para aprovecharnos de IPFS y utilizarla mas tarde en nuestro smart contract
+
+En nuestro caso, hemos subido esta imagen
+
+![image_info](https://gateway.pinata.cloud/ipfs/QmZM2ywL5z9UYMS9EMM5Xd7mDKE9TPrvtPw7doLatwgsbY)
