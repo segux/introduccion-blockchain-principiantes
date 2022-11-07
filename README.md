@@ -19,12 +19,13 @@ Mercado descentralizado peer-to-peer para comprar, vender e intercambiar product
 ### Asset
 El asset que queramos convertir en NFT, en este caso una imagen, aunque podría ser un render en 3D u otro elemento gráfico representable.
 
+* * *
 
 ## NFT Diagram flow
 
 ![image info](./assets/nft-diagram.png)
 
-
+* * *
 ## Metadata
 
 ERC-721 contiene un string metadata que es principalmente la base de los NFT.
@@ -33,10 +34,49 @@ No entraremos en detalle en este tutorial al respecto, pero recomiendo una lectu
 
 ![image_info](./assets/metadata-info.png)
 
-
-## Upload metadata to Pinata
+* * *
+## Subiendo la metadata a Pinata
 Procederemos a subir una imagen a Pinata para aprovecharnos de IPFS y utilizarla mas tarde en nuestro smart contract
 
 En nuestro caso, hemos subido esta imagen
 
 ![image_info](https://gateway.pinata.cloud/ipfs/QmZM2ywL5z9UYMS9EMM5Xd7mDKE9TPrvtPw7doLatwgsbY)
+
+
+* * *
+##  Preparando el entorno
+Iniciaremos el repositorio haciendo
+
+`mkdir my-first-nft`
+
+Entraremos en la carpeta recien creada
+
+`cd my-first-nft`
+
+Iniciamos el repositorio con npm
+
+`npm i -y`
+
+En cuanto a las dependencias del proyecto
+
+`yarn add @openzeppelin/contracts`
+
+`yarn add truffle`
+
+Inicializamos el proyecto truffle
+
+`npx truffle init`
+
+* * *
+##  ERC721 y Extensiones
+Los Smart-contracts en solidity tienen un gran parecido con las clases en el paradigma OOP(Object Oriented Programming)
+Los contratos tienen datos persistentes en las variables del estado y funciones que modifican estas variables.
+Si llamasemos a una funcion de otro contrato, ejecutaría una funcion en EVM(Ethereum Virtual Machine)
+
+En este tutorial vamos a utilizar el Preset `ERC721PresetMinterPauserAutoIdwhich` lo que contendrá varios smart-contracts con diferentes funcionalidades que nos permitirán agilizar la creación de nuestro nft.
+
+En este enlace podeis ver el código del preset https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/presets/ERC721PresetMinterPauserAutoId.sol 
+
+* * *
+
+
