@@ -1,6 +1,14 @@
 {
+  "scripts": {
+    "migrate": "truffle migrate --network goerli",
+    "mint": "truffle exec scripts/mintNFT.js --network goerli"
+  },
   "dependencies": {
     "@openzeppelin/contracts": "^4.7.3",
+    "dotenv": "^16.0.3",
     "truffle": "^5.6.4"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.1.1"
   }
 }
