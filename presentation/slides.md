@@ -1,5 +1,4 @@
 ---
-theme: default
 layout: cover
 class: text-center
 highlighter: shiki
@@ -7,6 +6,8 @@ lineNumbers: true
 drawings:
   persist: false
 title: Iniciándonos en Blockchain
+defaults:
+  layout:  center
 ---
 
 # Iniciándonos en Blockchain
@@ -20,9 +21,8 @@ Como adentrarnos en la blockchain, entenderla e interactuar con ella
 </div>
 
 ---
-
-## layout: fact
-
+layout: fact
+---
 # ¿Que es la blockchain?
 
 ---
@@ -31,6 +31,35 @@ title: Decentraliced image
 layout: image
 image: https://miro.medium.com/max/1400/1*fIEWQ_6IttN39MMPHg-_lg.jpeg
 
+---
+
+# Minería 
+La  minería es el método en el cual se resuelven problemas mátematicos de forma que la red premia con un  incentivo a todos los que ofrecen sus pools para resolver estoss problemas.
+
+Existen actualmente dos métodos de verificación de transacciones
+
+- PoW (Proof of Work)
+- PoS (Proof of Stake)
+---
+layout: cover
+background: 'https://academy.bit2me.com/wp-content/uploads/2018/07/07_pow-1.webp'
+---
+# Proof of Work
+---
+
+
+---
+layout: cover
+background: 'https://academy.bit2me.com/wp-content/uploads/2018/07/08_pos-1.webp'
+---
+
+# Proof of Stake
+
+---
+
+Proof of Stake (PoS) o Prueba de Participación es un protocolo de consenso creado para reemplazar al conocido Proof of Work aportando una mejor seguridad y escalabilidad a las redes que lo implementen.
+
+Este sistema busca incentivar a los participantes para que posean en todo momento, una determinada cantidad de monedas. La posesión de monedas, les permite ser elegidos por el proceso de selección aleatoria que se realiza para designar tareas. Bajo este esquema, aquellos que tengan más reservas, tienen mayor peso en la red y mayores oportunidades de ser elegidos. Una vez elegidos pueden validar transacciones y crear nuevos bloques dentro de la red. Permitiéndoles recibir ganancias e incentivos por el trabajo realizado.
 ---
 
 # Ethereum
@@ -42,6 +71,10 @@ Actualmente se encuentra en la versión 2.0 que dentro de sus mayores features e
 </p>
   <img width="300" height="180" src="https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/ethereum_2_the_merge_transition_to_proof_of_stake.jpg"/>
 </div>
+
+
+
+
 
 ---
 
