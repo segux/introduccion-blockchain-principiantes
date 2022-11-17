@@ -6,12 +6,12 @@ highlighter: shiki
 lineNumbers: true
 drawings:
   persist: false
-title: NFT Tutorial
+title: Iniciándonos en Blockchain
 ---
 
-# NFT Tutorial
+# Iniciándonos en Blockchain
 
-En este tutorial de NFT vamos a crear desde cero un smart contract en Goerli, la red testnet de ethereum y así poder generar nuestro primer NFT
+Como adentrarnos en la blockchain, entenderla e interactuar con ella
 
 <div class="absolute bottom-10">
   <span class="font-700">
@@ -20,34 +20,49 @@ En este tutorial de NFT vamos a crear desde cero un smart contract en Goerli, la
 </div>
 
 ---
-layout: fact
----
+
+## layout: fact
+
 # ¿Que es la blockchain?
+
 ---
+
 title: Decentraliced image
 layout: image
 image: https://miro.medium.com/max/1400/1*fIEWQ_6IttN39MMPHg-_lg.jpeg
+
 ---
+
+# Ethereum
+
+<div class="columns-2">
+<p>Ethereum es uno de los proyectos más importantes del ecosistema blockchain.
+Fué el primero en permitir interactuar con la blockchain implementando fragmentos de código que pueden ejecutarses en la propia cadena de bloques, también llamados <b>Smart-contracts</b>
+Actualmente se encuentra en la versión 2.0 que dentro de sus mayores features está el Proof of Staking
+</p>
+  <img width="300" height="180" src="https://www.notebookcheck.org/fileadmin/Notebooks/News/_nc3/ethereum_2_the_merge_transition_to_proof_of_stake.jpg"/>
+</div>
 
 ---
 
 # Que es un smart-contract
 
-## Los smart contracts se tratan de “scripts”  escritos con lenguajes de programación. Esto quiere decir que los términos del contrato son puras sentencias y comandos en el código que lo forma.
+## Los smart contracts se tratan de “scripts” escritos con lenguajes de programación. Esto quiere decir que los términos del contrato son puras sentencias y comandos en el código que lo forma.
 
 ---
+
 title: Smart contract Video
 layout: full
+
 ---
-<iframe width="1024" height="575" src="https://www.youtube.com/embed/4ZnYGLWVpXk" title="🎓 ¿Qué son los SMART CONTRACTS o Contratos Inteligentes? - Bit2Me Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
----
+
+## <iframe width="1024" height="575" src="https://www.youtube.com/embed/4ZnYGLWVpXk" title="🎓 ¿Qué son los SMART CONTRACTS o Contratos Inteligentes? - Bit2Me Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Que es un NFT
 
-Los tokens NFT o tokens no fungibles, son una solución creada para permitirnos representar objetos con cualidades únicas, irrepetibles e indivisibles dentro de una blockchain. 
+Los tokens NFT o tokens no fungibles, son una solución creada para permitirnos representar objetos con cualidades únicas, irrepetibles e indivisibles dentro de una blockchain.
 
-<iframe width="720" height="360" src="https://www.youtube.com/embed/nvwaNuPvnew" title="🎓 ¿QUÉ es un TOKEN NFT (Token No Funfible)? - Bit2Me Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
----
+## <iframe width="720" height="360" src="https://www.youtube.com/embed/nvwaNuPvnew" title="🎓 ¿QUÉ es un TOKEN NFT (Token No Funfible)? - Bit2Me Academy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
