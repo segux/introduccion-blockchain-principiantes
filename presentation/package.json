@@ -13,5 +13,8 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*",
     "slidev-theme-unicorn": "^1.1.1"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.34"
   }
 }
