@@ -1,14 +1,20 @@
 {
+  "name": "nft-tutorial",
+  "private": true,
   "scripts": {
-    "migrate": "truffle migrate --network goerli",
-    "mint": "truffle exec scripts/mintNFT.js --network goerli"
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.7.3",
-    "dotenv": "^16.0.3",
-    "truffle": "^5.6.4"
+    "@slidev/cli": "^0.36.11",
+    "@slidev/theme-apple-basic": "^0.20.0",
+    "@slidev/theme-bricks": "^0.0.2",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "slidev-theme-unicorn": "^1.1.1"
   },
   "devDependencies": {
-    "@truffle/hdwallet-provider": "^2.1.1"
+    "@iconify-json/mdi": "^1.1.34"
   }
 }
