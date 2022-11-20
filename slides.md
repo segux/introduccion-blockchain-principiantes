@@ -562,7 +562,7 @@ function tokenURI(uint256 _tokenId) public view virtual override returns(string 
 
 # Esto sería nuestro fichero final
 
-```solidity {all} {maxHeight:'200'}
+```solidity {all} {maxHeight:'400px'}
 //SPDX-License-Identifier: Unlicense
 pragma solidity 0.8.4; 
 
@@ -612,6 +612,8 @@ contract Tutorial is ERC721 {
 
 `npx hardhat compile`
 
+**Importante** Revisad que el fichero `hardhat.config.js` contiene la versión `0.8.4` de solidity, que es la versión que estamos utilizando para nuestro SmartContract
+
 ---
 
 # Testeando el smart contract
@@ -629,11 +631,12 @@ Para nuestros tests, utilizaremos chai, una assertion library que nos permitirá
 
 ## Creando el test
 
-Iremos a la carpeta test y crearemos el siguiente script: `tutorial-test.js`
-Y eliminaremos `sample-test.js`
+Iremos a la carpeta test y eliminaremos cualquier  fichero que haya dentro de esta carpeta.
+
+Crearemos el siguiente script: `tutorial-test.js`
 
 Con el siguiente contenido
-```js
+```js {all} {maxHeight: '150px'}
 const { expect } = require('chai');
 const { ethers } = require("hardhat")
 
@@ -679,14 +682,19 @@ this.beforeEach(async function() {
 # Probando la función mint
 
 ```js
-[account1] = await ethers.getSigners();
+it("NFT is minted successfully", async function () {
+  [account1] = await ethers.getSigners();
 
-expect(await tutorialContract.balanceOf(account1.address)).to.equal(0);
+  const balanceBeforeMint = await tutorialContract.balanceOf(account1.address);
+  expect(balanceBeforeMint.toNumber()).to.equal(0);
 
-const tokenURI = "https://opensea-creatures-api.herokuapp.com/api/creature/1"
-const tx = await tutorialContract.connect(account1).mint(tokenURI);
+  const tokenURI =
+    "https://opensea-creatures-api.herokuapp.com/api/creature/1";
+  const tx = await tutorialContract.connect(account1).mint(tokenURI);
 
-expect(await tutorialContract.balanceOf(account1.address)).to.equal(1);
+  const balanceAfterMint = await tutorialContract.balanceOf(account1.address);
+  expect(balanceAfterMint.toNumber()).to.equal(1);
+});
 ```
 ---
 
@@ -710,9 +718,9 @@ it("tokenURI is set sucessfully", async function() {
 
 ---
 
-# Como quedaría nuestro test
+# Como quedaría nuestro test
 
-```js
+```js {all} {maxHeight: '400px'}
 const { expect } = require('chai');
 const { ethers } = require("hardhat")
 
@@ -727,16 +735,19 @@ describe("Tutorial Smart Contract Tests", function() {
         tutorialContract = await Tutorial.deploy("Tutorial Contract", "ART");
     })
 
-    it("NFT is minted successfully", async function() {
-        [account1] = await ethers.getSigners();
+    it("NFT is minted successfully", async function () {
+      [account1] = await ethers.getSigners();
 
-        expect(await tutorialContract.balanceOf(account1.address)).to.equal(0);
-        
-        const tokenURI = "https://opensea-creatures-api.herokuapp.com/api/creature/1"
-        const tx = await tutorialContract.connect(account1).mint(tokenURI);
+      const balanceBeforeMint = await tutorialContract.balanceOf(account1.address);
+      expect(balanceBeforeMint.toNumber()).to.equal(0);
 
-        expect(await tutorialContract.balanceOf(account1.address)).to.equal(1);
-    })
+      const tokenURI =
+        "https://opensea-creatures-api.herokuapp.com/api/creature/1";
+      const tx = await tutorialContract.connect(account1).mint(tokenURI);
+
+      const balanceAfterMint = await tutorialContract.balanceOf(account1.address);
+      expect(balanceAfterMint.toNumber()).to.equal(1);
+    });
 
     it("tokenURI is set sucessfully", async function() {
         [account1, account2] = await ethers.getSigners();
@@ -771,12 +782,16 @@ Nos permitirá añadir nuestras variables de entorno para conectar con el api de
 `yarn add dotenv`
 ## @nomiclabs/hardhat-etherscan
 Nos permitirá verificar nuestro smart contract desplegado en la red mediante etherscan
+`yarn add @nomiclabs/hardhat-etherscan`
 
+## @nomiclabs/hardhat-waffle
+Framework que facilita los tests de smart contracts
+`yarn add @nomiclabs/hardhat-waffle`
 
 ---
 
-# Configuración dotenv
-
+# Configuración dotenv
+Creamos el fichero `.env` e incluimos la siguiente configuración 
 ```md
 INFURA_KEY=Paste the API key here
 PRIVATE_KEY=Paste the private key here
@@ -808,6 +823,9 @@ task("deploy", "Deploy the smart contracts", async(taskArgs, hre) => {
 
   await tutorialContract.deployed();
 
+  // FIXME: Actually some kind of bug with etherscan is going on because delay from api response to know if deployed
+  await new Promise((resolve) => setTimeout(resolve, 30000));
+
   await hre.run("verify:verify", {
     address: tutorialContract.address,
     constructorArguments: [
@@ -822,7 +840,7 @@ module.exports = {
   solidity: "0.8.4",
   networks: {
     goerli: {
-      url: `https://goerli.infura.io/v3/${process.env.INFURA_PROJECT_ID}`,
+      url: `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`,
       accounts: [process.env.PRIVATE_KEY],
     },
   },

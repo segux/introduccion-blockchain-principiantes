@@ -1,9 +1,13 @@
-# Tutorial Iniciandote en la Blockchain
+# Sample Hardhat Project
 
-Este tutorial pretende iniciar a persona a la blockchain y que acaben generando su propio smart contract en Solidity pudiendo Mintear un NFT y mostrarlo en opensea
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
-To start the slide show:
+Try running some of the following tasks:
 
-- `npm install`
-- `npm run dev`
-- visit http://localhost:3030
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.js
+```
