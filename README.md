@@ -11,3 +11,11 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+
+# Licenses
+
+All rights reserved to Bit2me.
+
+All videos used in this course are extracted from https://academy.bit2me.com
+
